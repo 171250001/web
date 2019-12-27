@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>主页面</title>
+    <link rel="stylesheet" href="..\css\homestyle.css">
+    <script type="text/javascript" src="..\js\lazyLoad.js"></script>
+    <link rel="icon" href="..\image\logo.ico" type="image/x-icon">
+</head>
+<body>
+    <!--实现弹窗-->
+    <div style='position: absolute;right: 10%;width:80%;height:80%;background-color:rgb(0,0,0,0)' id='modal'>	
+        <div class='modal' id='modalw'>		
+            <img id='bgImg'/>	
+        </div>
+    </div>
+
+    <div class="nav">
+        <!--logo-->
+        <div class="logoleft">
+            <img src="..\image\tianshu.png"/>
+        </div>
+        <!--导航栏-->
+        <div class="textright">
+            <ul>
+                <li><a href="#">退出</a></li>
+                <li><a href="#">我的收藏</a></li>
+                <li><a href="#">图库</a></li>
+                <li><a href="#">首页</a></li>
+            </ul>
+        </div>            
+    </div>
+    <!--主体-->
+    <div class="main">
+        <h2>热门壁纸</h2>
+        <div class="firstline"> 
+                 
+            <img class="hotpic" src="..\image\default.gif" data-src="..\image\wallpaper1.jpg" onclick="showBgImg(this)"/>
+            <img class="hotpic" src="..\image\default.gif" data-src="..\image\wallpaper2.png" onclick="showBgImg(this)"/>
+            <img class="hotpic" src="..\image\default.gif" data-src="..\image\wallpaper3.jpg" onclick="showBgImg(this)"/>
+            <img class="hotpic" src="..\image\default.gif" data-src="..\image\wallpaper4.jpg" onclick="showBgImg(this)"/>
+            <img class="hotpic" src="..\image\default.gif" data-src="..\image\wallpaper5.png" onclick="showBgImg(this)"/>
+            <img class="hotpic" src="..\image\default.gif" data-src="..\image\wallpaper6.jpg" onclick="showBgImg(this)"/>
+            <video class="hotpic" src="..\image\video.mp4"  controls preload="metadata"></video>  
+        </div>            
+    </div>
+    <script>
+        var modal=document.getElementById('modal');
+        var modalw=document.getElementById('modalw');
+        var bgImg=document.getElementById('bgImg');
+
+        function showBgImg(e){
+            modal.style.display='block';
+            modalw.style.display='block';
+            bgImg.src = e.src;
+        }
+        bgImg.onclick=function(){
+            modalw.style.display='none';
+            modal.style.display='none';
+        }
+    </script>
+</body>
+</html>
